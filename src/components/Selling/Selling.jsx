@@ -2,6 +2,7 @@ import { useState } from 'react'
 
 import styles from './Selling.module.css'
 import { useSelling } from '../../hooks'
+import { partNumber } from '../../utils'
 
 const Selling = () => {
   const [price, setPrice] = useState(0)
@@ -31,7 +32,7 @@ const Selling = () => {
       </form>
 
       <p className={styles.result}>
-        Result: <var>{result.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}</var>
+        Result: <var>{partNumber(result)}</var>
       </p>
     </div>
   )
