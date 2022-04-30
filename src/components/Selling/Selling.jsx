@@ -28,7 +28,10 @@ const Selling = () => {
           className={styles.price}
         />
 
-        <button type='submit'>Calculate</button>
+        <button
+          type='submit'
+          className={styles.submit}
+        >Calculate</button>
       </form>
 
       <p className={styles.result}>

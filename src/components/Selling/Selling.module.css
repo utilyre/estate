@@ -18,6 +18,10 @@
   font-size: 2rem;
 }
 
+.submit {
+  height: 1.5rem;
+}
+
 .result {
   margin-block-start: 0.5rem;
 }
