@@ -18,20 +18,26 @@ const Selling = () => {
   }
 
   return (
-    <div>
-      <form onSubmit={onSubmit}>
+    <div className={styles.container}>
+      <h2 className={styles.heading}>Selling</h2>
+
+      <form
+        onSubmit={onSubmit}
+        className={styles.form}
+      >
         <input
           type='number'
           ref={domInput}
           value={price}
           onChange={(e) => setPrice(e.target.value)}
+          className={styles.price}
         />
 
         <button type='submit'>Calculate</button>
       </form>
 
-      <p>
-        Result: <var>{result}</var>
+      <p className={styles.result}>
+        Result: <var>{result.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}</var>
       </p>
     </div>
   )

@@ -1,0 +1,23 @@
+.container {
+  background-color: #242424;
+  border-radius: 1rem;
+  margin: 0.5rem;
+  padding: 2rem;
+}
+
+.heading {
+  margin-block-end: 1rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.price {
+  font-size: 2rem;
+}
+
+.result {
+  margin-block-start: 0.5rem;
+}
