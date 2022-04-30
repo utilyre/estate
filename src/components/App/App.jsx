@@ -1,10 +1,10 @@
 import styles from './App.module.css'
+import { Selling } from '..'
 
 const App = () => {
   return (
     <main className={styles.container}>
-      <h1>Commission</h1>
-      <p>Hello world</p>
+      <Selling />
     </main>
   )
 }
