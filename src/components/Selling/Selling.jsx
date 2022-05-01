@@ -23,6 +23,8 @@ const Selling = () => {
       >
         <input
           type='number'
+          min={0}
+          step={0.01}
           value={price}
           onChange={(e) => setPrice(e.target.value)}
           className={styles.price}

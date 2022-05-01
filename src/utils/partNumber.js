@@ -1,5 +1,8 @@
 const partNumber = (number, separator = ',') => {
-  return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, separator)
+  return number.toLocaleString(
+    'en-US',
+    { minimumFractionDigits: 2 }
+  )
 }
 
 export default partNumber
