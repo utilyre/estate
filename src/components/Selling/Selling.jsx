@@ -6,7 +6,7 @@ import { partNumber } from '../../utils'
 
 const Selling = () => {
   const [price, setPrice] = useState(0)
-  const [result, calculate] = useSelling(200_000_000)
+  const [result, calculate] = useSelling(200)
 
   const onSubmit = (e) => {
     e.preventDefault()
@@ -35,7 +35,7 @@ const Selling = () => {
       </form>
 
       <p className={styles.result}>
-        Result: <var>{partNumber(result)}</var>
+        Result: <var>{partNumber(result)}</var> million
       </p>
     </div>
   )
