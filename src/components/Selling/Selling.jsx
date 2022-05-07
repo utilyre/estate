@@ -21,6 +21,7 @@ const Selling = () => {
         onSubmit={onSubmit}
         className={styles.form}
       >
+        <label htmlFor='price'>Price</label>
         <input
           type='number'
           min={0}

@@ -23,24 +23,30 @@ const Renting = () => {
         onSubmit={onSubmit}
         className={styles.form}
       >
-        <div className={styles.inputWrapper}>
-          <input
-            type='number'
-            min={0}
-            step={0.01}
-            value={mortgage}
-            onChange={(e) => setMortgage(e.target.value)}
-            className={styles.mortgage}
-          />
+        <div className={styles.inputRow}>
+          <div className={styles.inputWrapper}>
+            <label htmlFor='mortgage'>Mortgage</label>
+            <input
+              type='number'
+              min={0}
+              step={0.01}
+              value={mortgage}
+              onChange={(e) => setMortgage(e.target.value)}
+              className={styles.mortgage}
+            />
+          </div>
 
-          <input
-            type='number'
-            min={0}
-            step={0.01}
-            value={rent}
-            onChange={(e) => setRent(e.target.value)}
-            className={styles.rent}
-          />
+          <div className={styles.inputWrapper}>
+            <label htmlFor='rent'>Rent</label>
+            <input
+              type='number'
+              min={0}
+              step={0.01}
+              value={rent}
+              onChange={(e) => setRent(e.target.value)}
+              className={styles.rent}
+            />
+          </div>
         </div>
 
         <button

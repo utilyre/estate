@@ -14,14 +14,18 @@
   flex-direction: column;
 }
 
-.inputWrapper {
+.inputRow {
   display: flex;
+}
+
+.inputWrapper {
+  width: 50%;
 }
 
 .mortgage,
 .rent {
   font-size: 2rem;
-  width: 50%;
+  width: 100%;
 }
 
 .submit {
@@ -29,5 +33,5 @@
 }
 
 .result {
-  margin-block-start: 0.5rem;
+  margin-block-start: 1rem;
 }
