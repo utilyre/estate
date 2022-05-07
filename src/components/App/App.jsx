@@ -1,10 +1,11 @@
 import styles from './App.module.css'
-import { Selling } from '..'
+import { Selling, Renting } from '..'
 
 const App = () => {
   return (
     <main className={styles.container}>
       <Selling />
+      <Renting />
     </main>
   )
 }
