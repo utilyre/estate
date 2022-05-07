@@ -1,11 +1,16 @@
 import { useState } from 'react'
 
+import { calculateTax } from '../utils'
+
 const useRenting = () => {
   const [result, setResult] = useState(0)
 
   const calculate = (mortgage, rent) => {
     const half = (mortgage * 0.03 + rent) / 2
-    setResult(half * (0.25 + 1 / 15))
+
+    setResult(
+      calculateTax(half * (0.25 + 1 / 15))
+    )
   }
 
   return [result, calculate]
