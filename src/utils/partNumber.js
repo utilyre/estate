@@ -1,4 +1,4 @@
-const partNumber = (number, separator = ',') => {
+const partNumber = (number) => {
   return number.toLocaleString(
     'en-US',
     { minimumFractionDigits: 2 }
