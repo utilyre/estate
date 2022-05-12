@@ -1,7 +1,7 @@
 import partNumber from './partNumber'
-import calculateTax from './calculateTax'
+import applyTax from './applyTax'
 
 export {
   partNumber,
-  calculateTax,
+  applyTax,
 }
