@@ -17,10 +17,7 @@ const Selling = () => {
     <div className={styles.container}>
       <h2 className={styles.heading}>Selling</h2>
 
-      <form
-        onSubmit={onSubmit}
-        className={styles.form}
-      >
+      <form onSubmit={onSubmit} className={styles.form}>
         <label htmlFor='price'>Price</label>
         <input
           type='number'
@@ -31,10 +28,9 @@ const Selling = () => {
           className={styles.price}
         />
 
-        <button
-          type='submit'
-          className={styles.submit}
-        >Calculate</button>
+        <button type='submit' className={styles.submit}>
+          Calculate
+        </button>
       </form>
 
       <p className={styles.result}>

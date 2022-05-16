@@ -8,9 +8,7 @@ const useRenting = () => {
   const calculate = (mortgage, rent) => {
     const half = (mortgage * 0.03 + rent) / 2
 
-    setResult(
-      applyTax(half * (0.25 + 1 / 15))
-    )
+    setResult(applyTax(half * (0.25 + 1 / 15)))
   }
 
   return [result, calculate]

@@ -19,10 +19,7 @@ const Renting = () => {
     <div className={styles.container}>
       <h2 className={styles.heading}>Renting</h2>
 
-      <form
-        onSubmit={onSubmit}
-        className={styles.form}
-      >
+      <form onSubmit={onSubmit} className={styles.form}>
         <div className={styles.inputRow}>
           <div className={styles.inputWrapper}>
             <label htmlFor='mortgage'>Mortgage</label>
@@ -49,10 +46,9 @@ const Renting = () => {
           </div>
         </div>
 
-        <button
-          type='submit'
-          className={styles.submit}
-        >Calculate</button>
+        <button type='submit' className={styles.submit}>
+          Calculate
+        </button>
       </form>
 
       <p className={styles.result}>
