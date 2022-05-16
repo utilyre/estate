@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-import { applyTax } from '../utils'
+import { calculateTax } from '../utils'
 
 const useRenting = () => {
   const [result, setResult] = useState(0)
@@ -8,7 +8,7 @@ const useRenting = () => {
   const calculate = (mortgage, rent) => {
     const half = (mortgage * 0.03 + rent) / 2
 
-    setResult(applyTax(half * (0.25 + 1 / 15)))
+    setResult(calculateTax(half * (0.25 + 1 / 15)))
   }
 
   return [result, calculate]
