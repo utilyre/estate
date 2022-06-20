@@ -6,7 +6,7 @@ import { partNumber } from '../../utils'
 
 const Selling = () => {
   const [price, setPrice] = useState(0)
-  const [result, calculate] = useSelling(200)
+  const { pureWage, tax, total, calculate } = useSelling(200)
 
   const onSubmit = (e) => {
     e.preventDefault()
@@ -34,7 +34,13 @@ const Selling = () => {
       </form>
 
       <p className={styles.result}>
-        Result: <var>{partNumber(result)}</var> million
+        Pure wage: <var>{partNumber(pureWage)}</var> million
+      </p>
+      <p className={styles.result}>
+        Tax: <var>{partNumber(tax)}</var> million
+      </p>
+      <p className={styles.result}>
+        Total: <var>{partNumber(total)}</var> million
       </p>
     </div>
   )

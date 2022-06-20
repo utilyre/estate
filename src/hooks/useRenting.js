@@ -1,17 +1,26 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 import { calculateTax } from '../utils'
 
 const useRenting = () => {
-  const [result, setResult] = useState(0)
+  const [pureWage, setPureWage] = useState(0)
+  const [tax, setTax] = useState(0)
+  const [total, setTotal] = useState(0)
 
   const calculate = (mortgage, rent) => {
     const half = (mortgage * 0.03 + rent) / 2
-
-    setResult(calculateTax(half * (0.25 + 1 / 15)))
+    setPureWage(half / 4 + half / 15)
   }
 
-  return [result, calculate]
+  useEffect(() => {
+    setTax(calculateTax(pureWage))
+  }, [pureWage])
+
+  useEffect(() => {
+    setTotal(pureWage + tax)
+  }, [pureWage, tax])
+
+  return { pureWage, tax, total, calculate }
 }
 
 export default useRenting

@@ -8,7 +8,7 @@ const Renting = () => {
   const [mortgage, setMortgage] = useState(0)
   const [rent, setRent] = useState(0)
 
-  const [result, calculate] = useRenting()
+  const { pureWage, tax, total, calculate } = useRenting()
 
   const onSubmit = (e) => {
     e.preventDefault()
@@ -28,7 +28,7 @@ const Renting = () => {
               min={0}
               step={0.01}
               value={mortgage}
-              onChange={(e) => setMortgage(e.target.value)}
+              onChange={(e) => setMortgage(parseFloat(e.target.value))}
               className={styles.mortgage}
             />
           </div>
@@ -40,7 +40,7 @@ const Renting = () => {
               min={0}
               step={0.01}
               value={rent}
-              onChange={(e) => setRent(e.target.value)}
+              onChange={(e) => setRent(parseFloat(e.target.value))}
               className={styles.rent}
             />
           </div>
@@ -52,7 +52,13 @@ const Renting = () => {
       </form>
 
       <p className={styles.result}>
-        Result: <var>{partNumber(result)}</var> million
+        Pure wage: <var>{partNumber(pureWage)}</var> million
+      </p>
+      <p className={styles.result}>
+        Tax: <var>{partNumber(tax)}</var> million
+      </p>
+      <p className={styles.result}>
+        Total: <var>{partNumber(total)}</var> million
       </p>
     </div>
   )
