@@ -9,7 +9,7 @@ const useSelling = (boundary) => {
     const difference = price - boundary
     const overlap = (Math.abs(difference) + difference) / 2
 
-    setResult(calculateTax(price * 0.005 + overlap * 0.0008))
+    setResult(calculateTax((price - overlap) * 0.005 + overlap * 0.0008))
   }
 
   return [result, calculate]
