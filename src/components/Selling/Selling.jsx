@@ -6,11 +6,11 @@ import { partNumber } from '../../utils'
 
 const Selling = () => {
   const [price, setPrice] = useState(0)
-  const { pureWage, tax, total, calculate } = useSelling(200)
+  const { pureWage, tax, total, calculate } = useSelling(price)
 
   const onSubmit = (e) => {
     e.preventDefault()
-    calculate(price)
+    calculate()
   }
 
   return (

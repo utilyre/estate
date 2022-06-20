@@ -2,13 +2,13 @@ import { useState, useEffect } from 'react'
 
 import { calculateTax } from '../utils'
 
-const useSelling = (boundary) => {
+const useSelling = (price) => {
   const [pureWage, setPureWage] = useState(0)
   const [tax, setTax] = useState(0)
   const [total, setTotal] = useState(0)
 
-  const calculate = (price) => {
-    const difference = price - boundary
+  const calculate = () => {
+    const difference = price - 200
     const overlap = (Math.abs(difference) + difference) / 2
 
     setPureWage((price - overlap) * 0.005 + overlap * 0.0008)

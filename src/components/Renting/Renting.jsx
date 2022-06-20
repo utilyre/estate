@@ -8,11 +8,11 @@ const Renting = () => {
   const [mortgage, setMortgage] = useState(0)
   const [rent, setRent] = useState(0)
 
-  const { pureWage, tax, total, calculate } = useRenting()
+  const { pureWage, tax, total, calculate } = useRenting(mortgage, rent)
 
   const onSubmit = (e) => {
     e.preventDefault()
-    calculate(mortgage, rent)
+    calculate()
   }
 
   return (
