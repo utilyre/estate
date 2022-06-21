@@ -22,7 +22,7 @@ const Selling = () => {
         <input
           type='number'
           min={0}
-          step={0.01}
+          step={100_000}
           value={price}
           onChange={(e) => setPrice(e.target.value)}
           className={styles.price}
@@ -34,13 +34,13 @@ const Selling = () => {
       </form>
 
       <p className={styles.result}>
-        Pure wage: <var>{partNumber(pureWage)}</var> million
+        Pure wage: <var>{partNumber(pureWage)}</var> Tooman
       </p>
       <p className={styles.result}>
-        Tax: <var>{partNumber(tax)}</var> million
+        Tax: <var>{partNumber(tax)}</var> Tooman
       </p>
       <p className={styles.result}>
-        Total: <var>{partNumber(total)}</var> million
+        Total: <var>{partNumber(total)}</var> Tooman
       </p>
     </div>
   )

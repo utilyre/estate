@@ -8,7 +8,7 @@ const useSelling = (price) => {
   const [total, setTotal] = useState(0)
 
   const calculate = () => {
-    const difference = price - 200
+    const difference = price - 200_000_000
     const overlap = (Math.abs(difference) + difference) / 2
 
     setPureWage((price - overlap) * 0.005 + overlap * 0.0008)

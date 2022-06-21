@@ -1,5 +1,8 @@
 const partNumber = (number) => {
-  return number.toLocaleString('en-US', { minimumFractionDigits: 2 })
+  const commaSeparatedNumber = number.toLocaleString('en-US')
+  const truncatedNumber = commaSeparatedNumber.split(".")[0]
+
+  return truncatedNumber
 }
 
 export default partNumber

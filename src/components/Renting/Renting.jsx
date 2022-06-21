@@ -26,7 +26,7 @@ const Renting = () => {
             <input
               type='number'
               min={0}
-              step={0.01}
+              step={100_000}
               value={mortgage}
               onChange={(e) => setMortgage(parseFloat(e.target.value))}
               className={styles.mortgage}
@@ -38,7 +38,7 @@ const Renting = () => {
             <input
               type='number'
               min={0}
-              step={0.01}
+              step={100_000}
               value={rent}
               onChange={(e) => setRent(parseFloat(e.target.value))}
               className={styles.rent}
@@ -52,13 +52,13 @@ const Renting = () => {
       </form>
 
       <p className={styles.result}>
-        Pure wage: <var>{partNumber(pureWage)}</var> million
+        Pure wage: <var>{partNumber(pureWage)}</var> Tooman
       </p>
       <p className={styles.result}>
-        Tax: <var>{partNumber(tax)}</var> million
+        Tax: <var>{partNumber(tax)}</var> Tooman
       </p>
       <p className={styles.result}>
-        Total: <var>{partNumber(total)}</var> million
+        Total: <var>{partNumber(total)}</var> Tooman
       </p>
     </div>
   )
