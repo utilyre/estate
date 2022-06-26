@@ -15,10 +15,10 @@ const Selling = () => {
 
   return (
     <div className={styles.container}>
-      <h2 className={styles.heading}>Selling</h2>
+      <h2 className={styles.heading}>خرید و فروش</h2>
 
       <form onSubmit={onSubmit} className={styles.form}>
-        <label htmlFor='price'>Price</label>
+        <label htmlFor='price'>قیمت</label>
         <input
           type='number'
           min={0}
@@ -29,18 +29,18 @@ const Selling = () => {
         />
 
         <button type='submit' className={styles.submit}>
-          Calculate
+          محاسبه
         </button>
       </form>
 
       <p className={styles.result}>
-        Pure wage: <var>{partNumber(pureWage)}</var> Tooman
+        کارمزد: <var>{partNumber(pureWage)}</var> تومان
       </p>
       <p className={styles.result}>
-        Tax: <var>{partNumber(tax)}</var> Tooman
+        مالیات: <var>{partNumber(tax)}</var> تومان
       </p>
       <p className={styles.result}>
-        Total: <var>{partNumber(total)}</var> Tooman
+        مجموع: <var>{partNumber(total)}</var> تومان
       </p>
     </div>
   )

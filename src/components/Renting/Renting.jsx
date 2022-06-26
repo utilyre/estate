@@ -17,12 +17,12 @@ const Renting = () => {
 
   return (
     <div className={styles.container}>
-      <h2 className={styles.heading}>Renting</h2>
+      <h2 className={styles.heading}>رهن و اجاره</h2>
 
       <form onSubmit={onSubmit} className={styles.form}>
         <div className={styles.inputRow}>
           <div className={styles.inputWrapper}>
-            <label htmlFor='mortgage'>Mortgage</label>
+            <label htmlFor='mortgage'>رهن</label>
             <input
               type='number'
               min={0}
@@ -34,7 +34,7 @@ const Renting = () => {
           </div>
 
           <div className={styles.inputWrapper}>
-            <label htmlFor='rent'>Rent</label>
+            <label htmlFor='rent'>اجاره</label>
             <input
               type='number'
               min={0}
@@ -47,18 +47,18 @@ const Renting = () => {
         </div>
 
         <button type='submit' className={styles.submit}>
-          Calculate
+          محاسبه
         </button>
       </form>
 
       <p className={styles.result}>
-        Pure wage: <var>{partNumber(pureWage)}</var> Tooman
+        کارمزد: <var>{partNumber(pureWage)}</var> تومان
       </p>
       <p className={styles.result}>
-        Tax: <var>{partNumber(tax)}</var> Tooman
+        مالیات: <var>{partNumber(tax)}</var> تومان
       </p>
       <p className={styles.result}>
-        Total: <var>{partNumber(total)}</var> Tooman
+        مجموع: <var>{partNumber(total)}</var> تومان
       </p>
     </div>
   )
