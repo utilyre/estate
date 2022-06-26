@@ -1,26 +1,16 @@
 #!/usr/bin/env sh
 
-# abort on errors
-set -e
-
-# build
+# Build the app
 npm run build
+cd "dist"
 
-# navigate into the build output directory
-cd dist
+# Initialize git repo
+git rev-parse --is-inside-work-tree > "/dev/null" && git init
+git branch --force --move "main"
 
-# if you are deploying to a custom domain
-# echo 'www.example.com' > CNAME
+# Commit the distribution
+git add --all
+git commit --message="deploy"
 
-git init
-git checkout -b main
-git add -A
-git commit -m 'deploy'
-
-# if you are deploying to https://<USERNAME>.github.io
-# git push -f git@github.com:<USERNAME>/<USERNAME>.github.io.git main
-
-# if you are deploying to https://<USERNAME>.github.io/<REPO>
-git push -f git@github.com:utilyre/commission.git main:gh-pages
-
-cd -
+# Push to https://utilyre.github.io/commission
+git push --force "git@github.com:utilyre/commission.git" "main:gh-pages"
