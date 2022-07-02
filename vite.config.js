@@ -6,9 +6,9 @@ const pwaConfig = {
   base: '/commission/',
   includeAssets: ['favicon.svg'],
   manifest: {
-    name: 'Commission Calculator',
-    short_name: 'Commission',
-    description: 'Allows you to easily calculate commission related stuff',
+    name: 'محاسبه گر کمیسیون',
+    short_name: 'کمیسیون',
+    description: 'با این برنامه به راحتی کمیسیون املاک را حساب کنید',
     theme_color: '#000000',
     icons: [
       {
