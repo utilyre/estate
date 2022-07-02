@@ -29,3 +29,5 @@ npm run build
 
 # Bring back the modifications
 "$stashed" && git stash pop
+
+exit 0
