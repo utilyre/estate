@@ -3,7 +3,8 @@ import react from '@vitejs/plugin-react'
 import { VitePWA } from 'vite-plugin-pwa'
 
 const pwaConfig = {
-  includeAssets: ['favicon.svg', 'favicon.png'],
+  base: '/commission/',
+  includeAssets: ['favicon.svg'],
   manifest: {
     name: 'Commission Calculator',
     short_name: 'Commission',
@@ -11,8 +12,13 @@ const pwaConfig = {
     theme_color: '#000000',
     icons: [
       {
-        src: 'favicon.png',
+        src: '/commission/commission-512x512.png',
         sizes: '512x512',
+        type: 'image/png',
+      },
+      {
+        src: '/commission/commission-192x192.png',
+        sizes: '192x192',
         type: 'image/png',
       },
     ],
