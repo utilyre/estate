@@ -5,7 +5,8 @@
   },
   "extends": [
     "eslint:recommended",
-    "plugin:react/recommended"
+    "plugin:react/recommended",
+    "plugin:react/jsx-runtime"
   ],
   "parserOptions": {
     "ecmaFeatures": {
@@ -17,5 +18,10 @@
   "plugins": [
     "react"
   ],
-  "rules": {}
+  "rules": {},
+  "settings": {
+    "react": {
+      "version": "18.0.0"
+    }
+  }
 }
