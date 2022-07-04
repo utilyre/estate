@@ -5,7 +5,7 @@ import { useSelling } from '../../hooks'
 import { partNumber } from '../../utils'
 
 const Selling = () => {
-  const [price, setPrice] = useState(0)
+  const [price, setPrice] = useState('')
   const { wage, tax, total } = useSelling(price)
 
   return (
