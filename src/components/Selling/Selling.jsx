@@ -12,17 +12,15 @@ const Selling = () => {
     <div className={styles.container}>
       <h2 className={styles.heading}>خرید و فروش</h2>
 
-      <form className={styles.form}>
-        <label htmlFor='price'>قیمت</label>
-        <input
-          type='number'
-          min={0}
-          step={100_000}
-          value={price}
-          onChange={(e) => setPrice(e.target.value)}
-          className={styles.price}
-        />
-      </form>
+      <input
+        type='number'
+        min={0}
+        step={100_000}
+        value={price}
+        onChange={(e) => setPrice(e.target.value)}
+        placeholder='قیمت (به تومان)'
+        className={styles.price}
+      />
 
       <p className={styles.result}>
         کارمزد: <var>{partNumber(wage)}</var> تومان
