@@ -1,6 +1,6 @@
 import { useState, useMemo, useEffect } from 'react'
 
-import { calculateTax } from '../utils'
+import { calculateTax } from '/src/utils'
 
 const useSelling = (price) => {
   const [wage, setWage] = useState(0)

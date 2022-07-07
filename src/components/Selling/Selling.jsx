@@ -1,8 +1,8 @@
 import { useState } from 'react'
 
 import styles from './Selling.module.css'
-import { useSelling } from '../../hooks'
-import { partNumber } from '../../utils'
+import { useSelling } from '/src/hooks'
+import { partNumber } from '/src/utils'
 
 const Selling = () => {
   const [price, setPrice] = useState('')

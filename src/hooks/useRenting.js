@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 
-import { calculateTax } from '../utils'
+import { calculateTax } from '/src/utils'
 
 const useRenting = (mortgage, rent) => {
   const [pureWage, setPureWage] = useState(0)

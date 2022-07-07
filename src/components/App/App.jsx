@@ -1,5 +1,5 @@
 import styles from './App.module.css'
-import { Selling, Renting } from '..'
+import { Selling, Renting } from '/src/components'
 
 const App = () => {
   return (
