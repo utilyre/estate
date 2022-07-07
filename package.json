@@ -14,7 +14,7 @@
     "build": "vite build",
     "preview": "vite preview",
     "lint": "eslint .",
-    "format": "prettier ."
+    "format": "prettier --write ."
   },
   "dependencies": {
     "react": "^18.0.0",
