@@ -1,8 +1,8 @@
 import { useState } from 'react'
 
 import styles from './Renting.module.css'
-import { useRenting } from '/src/hooks'
-import { partNumber } from '/src/utils'
+import { useRenting } from '../../hooks'
+import { partNumber } from '../../utils'
 
 const Renting = () => {
   const [mortgage, setMortgage] = useState(0)
