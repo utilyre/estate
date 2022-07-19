@@ -14,43 +14,51 @@ const Renting = () => {
     <div className={styles.container}>
       <h2 className={styles.heading}>رهن و اجاره</h2>
 
-      <form className={styles.form}>
-        <div className={styles.inputRow}>
-          <div className={styles.inputWrapper}>
-            <label htmlFor='mortgage'>رهن</label>
-            <input
-              type='number'
-              min={0}
-              step={100_000}
-              value={mortgage}
-              onChange={(e) => setMortgage(e.target.value)}
-              className={styles.mortgage}
-            />
-          </div>
+      <input
+        type='number'
+        min={0}
+        step={100_000}
+        value={mortgage}
+        onChange={(e) => setMortgage(e.target.value)}
+        placeholder='رهن (به تومان)'
+        className={styles.input}
+      />
 
-          <div className={styles.inputWrapper}>
-            <label htmlFor='rent'>اجاره</label>
-            <input
-              type='number'
-              min={0}
-              step={100_000}
-              value={rent}
-              onChange={(e) => setRent(e.target.value)}
-              className={styles.rent}
-            />
-          </div>
-        </div>
-      </form>
+      <input
+        type='number'
+        min={0}
+        step={100_000}
+        value={rent}
+        onChange={(e) => setRent(e.target.value)}
+        placeholder='اجاره (به تومان)'
+        className={styles.input}
+      />
 
-      <p className={styles.result}>
-        کارمزد: <var>{partNumber(wage)}</var> تومان
-      </p>
-      <p className={styles.result}>
-        مالیات: <var>{partNumber(tax)}</var> تومان
-      </p>
-      <p className={styles.result}>
-        مجموع: <var>{partNumber(total)}</var> تومان
-      </p>
+      <hr className={styles.separator} />
+
+      <section className={styles.resultWrapper}>
+        <h3 className={styles.resultHeading}>کارمزد</h3>
+        <p>
+          <var className={styles.result}>{partNumber(wage)}</var>
+          <span>تومان</span>
+        </p>
+      </section>
+
+      <section className={styles.resultWrapper}>
+        <h3 className={styles.resultHeading}>مالیات</h3>
+        <p>
+          <var className={styles.result}>{partNumber(tax)}</var>
+          <span>تومان</span>
+        </p>
+      </section>
+
+      <section className={styles.resultWrapper}>
+        <h3 className={styles.resultHeading}>مجموع</h3>
+        <p>
+          <var className={styles.result}>{partNumber(total)}</var>
+          <span>تومان</span>
+        </p>
+      </section>
     </div>
   )
 }
