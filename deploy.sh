@@ -4,9 +4,8 @@
 commit_hash="$(git rev-parse "HEAD")"
 
 # Stash all modifications
-[ "$(git stash push --include-untracked)" = "No local changes to save" ] &&
-	stashed="false" ||
-	stashed="true"
+[ "$(git stash push --include-untracked)" != "No local changes to save" ]
+stashed="$?"
 
 # Build the app
 npm run build
@@ -28,6 +27,6 @@ npm run build
 )
 
 # Bring back the modifications
-"$stashed" && git stash pop
+[ "$stashed" -eq "0" ] && git stash pop
 
 exit 0
