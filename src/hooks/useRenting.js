@@ -1,26 +1,22 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 
 import { calculateTax } from '../utils'
 
 const useRenting = (mortgage, rent) => {
-  const [pureWage, setPureWage] = useState(0)
-  const [tax, setTax] = useState(0)
-  const [total, setTotal] = useState(0)
+  const [wage, setPureWage] = useState(0)
 
-  const calculate = () => {
-    const half = (mortgage * 0.03 + rent) / 2
+  const tax = useMemo(() => calculateTax(wage), [wage])
+  const total = useMemo(() => wage + tax, [wage, tax])
+
+  useEffect(() => {
+    const numMortgage = mortgage === '' || isNaN(mortgage) ? 0 : parseInt(mortgage)
+    const numRent = rent === '' || isNaN(rent) ? 0 : parseInt(rent)
+
+    const half = (numMortgage * 0.03 + numRent) / 2
     setPureWage(half / 4 + half / 15)
-  }
+  }, [mortgage, rent])
 
-  useEffect(() => {
-    setTax(calculateTax(pureWage))
-  }, [pureWage])
-
-  useEffect(() => {
-    setTotal(pureWage + tax)
-  }, [pureWage, tax])
-
-  return { pureWage, tax, total, calculate }
+  return { wage, tax, total }
 }
 
 export default useRenting
