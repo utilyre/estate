@@ -19,18 +19,34 @@ const Selling = () => {
         value={price}
         onChange={(e) => setPrice(e.target.value)}
         placeholder='قیمت (به تومان)'
-        className={styles.price}
+        className={styles.input}
       />
 
-      <p className={styles.result}>
-        کارمزد: <var>{partNumber(wage)}</var> تومان
-      </p>
-      <p className={styles.result}>
-        مالیات: <var>{partNumber(tax)}</var> تومان
-      </p>
-      <p className={styles.result}>
-        مجموع: <var>{partNumber(total)}</var> تومان
-      </p>
+      <hr className={styles.separator} />
+
+      <section className={styles.resultWrapper}>
+        <h3 className={styles.resultHeading}>کارمزد</h3>
+        <p>
+          <var className={styles.result}>{partNumber(wage)}</var>
+          <span>تومان</span>
+        </p>
+      </section>
+
+      <section className={styles.resultWrapper}>
+        <h3 className={styles.resultHeading}>مالیات</h3>
+        <p>
+          <var className={styles.result}>{partNumber(tax)}</var>
+          <span>تومان</span>
+        </p>
+      </section>
+
+      <section className={styles.resultWrapper}>
+        <h3 className={styles.resultHeading}>مجموع</h3>
+        <p>
+          <var className={styles.result}>{partNumber(total)}</var>
+          <span>تومان</span>
+        </p>
+      </section>
     </div>
   )
 }
