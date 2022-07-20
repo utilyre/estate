@@ -8,7 +8,7 @@ const pwaConfig = {
   manifest: {
     name: 'بنگاه',
     short_name: 'بنگاه',
-    description: 'با این برنامه به راحتی کمیسیون املاک را حساب کنید',
+    description: 'با این برنامه به راحتی کارمزد املاک را حساب کنید',
     theme_color: '#000000',
     icons: [
       {

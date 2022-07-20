@@ -10,11 +10,6 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <StrictMode>
     <App />
 
-    <ToastContainer
-      rtl
-      theme='dark'
-      position='top-left'
-      hideProgressBar
-    />
+    <ToastContainer rtl theme='dark' position='top-left' hideProgressBar />
   </StrictMode>
 )
