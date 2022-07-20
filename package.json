@@ -13,7 +13,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "lint": "eslint .",
+    "lint": "eslint --ext .js,.jsx .",
     "format": "prettier --write ."
   },
   "dependencies": {
