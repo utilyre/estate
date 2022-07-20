@@ -6,8 +6,8 @@ const pwaConfig = {
   base: '/estate/',
   includeAssets: ['favicon.svg'],
   manifest: {
-    name: 'بنگاه',
-    short_name: 'بنگاه',
+    name: 'املاک',
+    short_name: 'املاک',
     description: 'با این برنامه به راحتی کارمزد املاک را حساب کنید',
     theme_color: '#000000',
     icons: [
