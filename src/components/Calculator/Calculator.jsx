@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from 'react'
 import PropTypes from 'prop-types'
+import { toast } from 'react-toastify'
 
 import styles from './Calculator.module.css'
 import { calculateTax, partNumber } from '../../utils'
@@ -62,6 +63,26 @@ const Calculator = ({ title, inputs, calculateWage }) => {
           <span>تومان</span>
         </p>
       </section>
+
+      <button
+        onClick={() => {
+          let text = `کارمزد: ${partNumber(wage)} تومان\n`
+          text += `مالیات: ${partNumber(tax)} تومان\n`
+          text += `مجموع: ${partNumber(total)} تومان\n`
+
+          if (navigator.share)
+            navigator.share({
+              text: text,
+            })
+          else {
+            navigator.clipboard.writeText(text)
+            toast.info('کپی شد.')
+          }
+        }}
+        className={styles.share}
+      >
+        اشتراک گذاری
+      </button>
     </div>
   )
 }
