@@ -1,11 +1,11 @@
 {
-  "name": "commission",
+  "name": "estate",
   "description": "Easily calculate commission of any land with this application",
   "author": "Amirabbas Fazelinia <utilyre@proton.me>",
-  "homepage": "https://utilyre.github.io/commission/",
+  "homepage": "https://utilyre.github.io/estate/",
   "repository": {
     "type": "git",
-    "url": "https://github.com/utilyre/commission"
+    "url": "https://github.com/utilyre/estate"
   },
   "private": true,
   "version": "0.0.0",

@@ -21,8 +21,8 @@ npm run build
 	git add --all
 	git commit --message="Deploy \`$commit_hash\`"
 
-	# Push to https://utilyre.github.io/commission
-	[ "$(git ls-remote --get-url "origin")" = "origin" ] && git remote add "origin" "git@github.com:utilyre/commission.git"
+	# Push to https://utilyre.github.io/estate
+	[ "$(git ls-remote --get-url "origin")" = "origin" ] && git remote add "origin" "git@github.com:utilyre/estate.git"
 	git push --force "origin" "gh-pages"
 )
 
