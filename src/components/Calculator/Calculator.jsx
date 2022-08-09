@@ -3,7 +3,17 @@ import PropTypes from 'prop-types'
 import { toast } from 'react-toastify'
 
 import styles from './Calculator.module.css'
-import { calculateTax, partNumber } from '../../utils'
+
+const calculateTax = (price) => {
+  return price * 0.09
+}
+
+const partNumber = (number) => {
+  const commaSeparatedNumber = number.toLocaleString('en-US')
+  const truncatedNumber = commaSeparatedNumber.split('.')[0]
+
+  return truncatedNumber
+}
 
 const Calculator = ({ title, inputs, calculateWage }) => {
   const [wage, setWage] = useState(0)
