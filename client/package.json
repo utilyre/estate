@@ -10,9 +10,9 @@
   "private": true,
   "version": "0.0.0",
   "scripts": {
-    "dev": "vite --host",
+    "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview --host",
+    "preview": "vite preview",
     "lint": "eslint --ext .js,.jsx .",
     "format": "prettier --write ."
   },
