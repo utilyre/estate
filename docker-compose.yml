@@ -1,0 +1,57 @@
+networks:
+  estate:
+    name: estate
+    driver: bridge
+
+volumes:
+  data:
+  gopath:
+
+services:
+  database:
+    image: mongo:5.0.10
+    command: mongod --port ${DATABASE_PORT}
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=${DATABASE_USER}
+      - MONGO_INITDB_ROOT_PASSWORD=${DATABASE_PASS}
+    volumes:
+      - data:/data/db
+    hostname: ${DATABASE_HOST}
+    networks:
+      - estate
+    expose:
+      - ${DATABASE_PORT}
+
+  server:
+    depends_on:
+      - database
+    image: cosmtrek/air:v1.40.4
+    environment:
+      - DATABASE_HOST=${DATABASE_HOST}
+      - DATABASE_PORT=${DATABASE_PORT}
+      - DATABASE_USERNAME=${DATABASE_USER}
+      - DATABASE_PASSWORD=${DATABASE_PASS}
+    working_dir: /app
+    volumes:
+      - gopath:/go
+      - ./server:/app
+    networks:
+      - estate
+    ports:
+      - ${SERVER_PORT}:${SERVER_PORT}
+
+  client:
+    depends_on:
+      - database
+      - server
+    image: node:18.7.0-alpine
+    command: npm run dev
+    environment:
+      - VITE_SERVER_PORT=${SERVER_PORT}
+    working_dir: /app
+    volumes:
+      - ./client:/app
+    networks:
+      - estate
+    ports:
+      - ${CLIENT_PORT}:${CLIENT_PORT}
