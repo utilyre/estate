@@ -29,8 +29,8 @@ const pwaConfig = {
 export default defineConfig({
   plugins: [react(), VitePWA(pwaConfig)],
   base: '/',
-  preview: {
-    host: true,
-    port: import.meta.env.CLIENT_PORT,
-  }
+  server: {
+    host: '0.0.0.0',
+    port: process.env.VITE_CLIENT_PORT,
+  },
 })
