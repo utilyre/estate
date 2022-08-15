@@ -29,8 +29,9 @@ services:
     environment:
       - DATABASE_HOST=${DATABASE_HOST}
       - DATABASE_PORT=${DATABASE_PORT}
-      - DATABASE_USERNAME=${DATABASE_USER}
-      - DATABASE_PASSWORD=${DATABASE_PASS}
+      - DATABASE_USER=${DATABASE_USER}
+      - DATABASE_PASS=${DATABASE_PASS}
+      - SERVER_PORT=${SERVER_PORT}
     working_dir: /app
     volumes:
       - gopath:/go
@@ -48,6 +49,7 @@ services:
     command: npm run dev
     environment:
       - VITE_SERVER_PORT=${SERVER_PORT}
+      - VITE_CLIENT_PORT=${CLIENT_PORT}
     working_dir: /app
     volumes:
       - ./client:/app
