@@ -2,7 +2,6 @@
   "name": "estate",
   "description": "Easily calculate wage of any land with this application",
   "author": "Amirabbas Fazelinia <utilyre@proton.me>",
-  "homepage": "https://utilyre.github.io/estate/",
   "repository": {
     "type": "git",
     "url": "https://github.com/utilyre/estate"

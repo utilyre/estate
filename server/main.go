@@ -16,5 +16,5 @@ func main() {
 		return c.SendString("Hello world!")
 	})
 
-	app.Listen(":" + os.Getenv("SERVER_PORT"))
+	app.Listen("0.0.0.0:" + os.Getenv("SERVER_PORT"))
 }
