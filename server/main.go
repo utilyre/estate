@@ -2,6 +2,7 @@ package main
 
 import (
 	"context"
+	"log"
 	"os"
 
 	"github.com/gofiber/fiber/v2"
@@ -10,7 +11,10 @@ import (
 )
 
 func main() {
-	database.Connect()
+	err := database.Connect()
+	if err != nil {
+		log.Fatalln(err)
+	}
 	defer database.Client.Disconnect(context.Background())
 
 	app := fiber.New()
