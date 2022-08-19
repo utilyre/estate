@@ -8,6 +8,7 @@ import (
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/fiber/v2/middleware/cors"
 	"github.com/utilyre/estate/database"
+	"github.com/utilyre/estate/routers"
 )
 
 func main() {
@@ -21,9 +22,7 @@ func main() {
 
 	app.Use(cors.New())
 
-	app.Get("/", func(c *fiber.Ctx) error {
-		return c.SendString("Hello world!")
-	})
+	routers.V1(app)
 
 	app.Listen("0.0.0.0:" + os.Getenv("SERVER_PORT"))
 }
