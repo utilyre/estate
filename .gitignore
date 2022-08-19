@@ -1,5 +1,6 @@
 server/tmp
 client/node_modules
 
+.env
 *.local
 *.log
